@@ -1,0 +1,134 @@
+/* style.css */
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: var(--font-family);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 5% 10px 2%;
+    background-color: var(--header-bg-color);
+    color: white;
+}
+
+.header-logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: var(--main-padding);
+    background-color: var(--main-bg-color);
+}
+
+.calc-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-gap);
+}
+
+.calc-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid var(--main-text-color);
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calc-box h2 {
+    font-size: 24px;
+    color: var(--main-text-color);
+    margin-bottom: 10px;
+}
+
+.calc-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.calc-button {
+    border-radius: 10px;
+    background-color: var(--main-text-color);
+    padding: 10px 20px;
+    color: var(--main-text-color2);
+    text-align: center;
+    cursor: pointer;
+}
+
+.calc-button:hover {
+    background-color: #00796b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.double-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.box-half {
+    width: 48%;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .double-box {
+        flex-direction: column;
+    }
+
+    .box-half {
+        width: 100%;
+    }
+}

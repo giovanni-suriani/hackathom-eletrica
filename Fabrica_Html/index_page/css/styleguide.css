@@ -1,0 +1,10 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --other-bg: rgba(240, 240, 240, 0.93);
+    --header-bg-color: #005e60;
+    --main-text-color: #005e60;
+    --main-text-color2: #c8ff08;
+    --font-family: Inter;
+    --main-padding: 7vh 20% 7vh 20%;
+    --main-gap: 7vh
+}

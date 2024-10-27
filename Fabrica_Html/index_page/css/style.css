@@ -1,0 +1,165 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: var(--font-family);
+}
+
+header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 10px 5% 10px 2%;
+    background-color: var(--header-bg-color);
+    font-size: 18px;
+    color: white;
+}
+
+.header-logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    /* padding-right: 10%; */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+main {
+    padding: var(--main-padding);
+    background-color: var(--main-bg-color);
+}
+
+.calc-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-gap);
+}
+
+.calc-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid;
+    /* TODO: arrumar esse gradiente */
+    /* border-image: linear-gradient(to right, #8bc34a, #004f5f) 1; */
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calc-box h2 {
+    width: 100%;
+    font-size: 37px;
+    color: var(--main-text-color);
+    font-weight: 400; /* Normal */
+    margin-bottom: 10px;
+}
+
+.calc-box p {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    color: var(--main-text-color);
+}
+
+.calc-button {
+    border-radius: 10px;
+    background-color: #005e60;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 7px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #c8ff08;
+}
+
+.calc-button:hover {
+    background-color: #00796b;
+    cursor: pointer;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.double-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.box-half {
+    width: 48%;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

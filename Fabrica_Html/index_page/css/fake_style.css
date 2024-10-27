@@ -1,0 +1,193 @@
+.clculo-de-baixa {
+    align-self: stretch;
+    position: relative;
+    display: inline-block;
+    height: 45px;
+    flex-shrink: 0;
+}
+.envolve-o-dimensionamento {
+    flex: 1;
+    position: relative;
+}
+.envolve-o-dimensionamento-e-an-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 0px 3px;
+    font-size: 18px;
+}
+.clculo-de-baixa-tenso-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+.adicionar-lista {
+    position: relative;
+}
+.adicionar-lista-de-cabos-wrapper {
+    border-radius: 10px;
+    background-color: #005e60;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 7px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #c8ff08;
+}
+.clculo-baixa-tensao {
+    align-self: stretch;
+    border-radius: 20px;
+    background-color: #fdfdfd;
+    border: 3px solid rgba(0, 65, 97, 0.96);
+    box-sizing: border-box;
+    height: 221px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px;
+    gap: 30px;
+}
+.main {
+    position: absolute;
+    top: 119px;
+    left: 0px;
+    width: 1440px;
+    height: 700px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 36px 46px;
+    box-sizing: border-box;
+    gap: 125px;
+}
+.ge-vernova-logo-181x41-upscayl-icon {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 71px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.ge-logo {
+    width: 332px;
+    height: 91px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.texto-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.property-1default {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.texto-container {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+}
+.property-1variant2 {
+    position: absolute;
+    top: 62px;
+    left: 20px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.header-item-text {
+    width: 88px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px dashed #9747ff;
+    box-sizing: border-box;
+    height: 104px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.vector-icon {
+    width: 21.9px;
+    position: relative;
+    height: 14.1px;
+}
+.vector-icon1 {
+    width: 21.9px;
+    position: relative;
+    height: 21.9px;
+    display: none;
+}
+.header-item-text-parent {
+    width: 225.9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.header-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 97px;
+}
+.header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #005e60;
+    width: 1440px;
+    height: 119px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 37px;
+    box-sizing: border-box;
+    gap: 361px;
+    font-size: 18px;
+    color: #fff;
+}
+.index {
+    width: 100%;
+    position: relative;
+    background-color: rgba(240, 240, 240, 0.93);
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 37px;
+    color: #005e60;
+    font-family: Inter;
+}
+
