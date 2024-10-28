@@ -26,92 +26,158 @@
 
     <main>
       <section class="calc-section">
-        <!-- 1a Caixa: Critérios de Projeto -->
-        <div class="calc-box">
+         <!-- Primeira Caixa: Critérios de Projeto -->
+         <div class="calc-box">
           <h2>Critérios de Projeto</h2>
           <table>
-            <tr>
-              <th>Tamanho máximo da Bitola</th>
-              <td>240 mm</td>
-            </tr>
-            <tr>
-              <th>Tamanho mínimo da Bitola</th>
-              <td>10 mm</td>
-            </tr>
-            <tr>
-              <th>Queda De Tensão Máxima</th>
-              <td>5 %</td>
-            </tr>
+              <tr>
+                  <th>Tamanho máximo da Bitola</th>
+                  <td><input type="text" class="bitola-max" placeholder="240 mm"></td>
+              </tr>
+              <tr>
+                  <th>Tamanho mínimo da Bitola</th>
+                  <td><input type="text" class="bitola-min" placeholder="10 mm"></td>
+              </tr>
+              <tr>
+                  <th>Queda De Tensão Máxima</th>
+                  <td><input type="text" class="queda-tensao" placeholder="5 %"></td>
+              </tr>
           </table>
-        </div>
+      </div>
 
-        <!-- 2a Caixa: Identificação do Circuito e Características Elétricas -->
-        <div class="calc-box">
+      <!-- Segunda Caixa: Identificação do Circuito e Características Elétricas -->
+      <div class="calc-box">
           <div class="double-box">
-            <!-- Identificação do Circuito -->
-            <div class="box-half">
-              <h2>Identificação do Circuito</h2>
-              <table>
-                <tr>
-                  <th>Sala Elétrica</th>
-                  <td>240 mm</td>
-                </tr>
-                <tr>
-                  <th>Origem</th>
-                  <td>10 mm</td>
-                </tr>
-                <tr>
-                  <th>Sistema</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Tipo de Cabo</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Maneira de Instalar</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Método da Norma</th>
-                  <td>5 %</td>
-                </tr>
-              </table>
-            </div>
+              <!-- Identificação do Circuito -->
+              <div class="box-half">
+                  <h2>Identificação do Circuito</h2>
+                  <table>
+                      <tr>
+                          <th>Sala Elétrica</th>
+                          <td><input type="text" class="sala-eletrica" placeholder="240 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Origem</th>
+                          <td><input type="text" class="origem" placeholder="10 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Sistema</th>
+                          <td><input type="text" class="sistema" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Tipo de Cabo</th>
+                          <td><input type="text" class="tipo-cabo" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Maneira de Instalar</th>
+                          <td><input type="text" class="maneira-instalar" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Método da Norma</th>
+                          <td><input type="text" class="metodo-norma" placeholder="5 %"></td>
+                      </tr>
+                  </table>
+              </div>
 
-            <!-- Características Elétricas -->
-            <div class="box-half">
-              <h2>Características Elétricas</h2>
-              <table>
-                <tr>
-                  <th>Tensão do Circuito</th>
-                  <td>240 mm</td>
-                </tr>
-                <tr>
-                  <th>Potência Nominal</th>
-                  <td>10 mm</td>
-                </tr>
-                <tr>
-                  <th>Fator de Potência</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Corrente Nominal*</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Corrente do Circuito</th>
-                  <td>5 %</td>
-                </tr>
-                <tr>
-                  <th>Corrente de Curto-Circuito</th>
-                  <td>5 %</td>
-                </tr>
-              </table>
-            </div>
+              <!-- Características Elétricas -->
+              <div class="box-half">
+                  <h2>Características Elétricas</h2>
+                  <table>
+                      <tr>
+                          <th>Tensão do Circuito</th>
+                          <td><input type="text" class="tensao-circuito" placeholder="240 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Potência Nominal</th>
+                          <td><input type="text" class="potencia-nominal" placeholder="10 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Fator de Potência</th>
+                          <td><input type="text" class="fator-potencia" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Corrente Nominal*</th>
+                          <td><input type="text" class="corrente-nominal" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Corrente do Circuito</th>
+                          <td><input type="text" class="corrente-circuito" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Corrente de Curto-Circuito</th>
+                          <td><input type="text" class="curto-circuito" placeholder="5 %"></td>
+                      </tr>
+                  </table>
+              </div>
           </div>
-        </div>
-      
+      </div>
+
+      <!-- Terceira Caixa: Características do Condutor e Parâmetros de Instalação -->
+      <div class="calc-box">
+          <div class="double-box">
+              <!-- Características do Condutor -->
+              <div class="box-half">
+                  <h2>Características do Condutor</h2>
+                  <table>
+                      <tr>
+                          <th>Número de condutores carregados</th>
+                          <td><input type="text" class="num-condutores" placeholder="240 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Isolação de condutor</th>
+                          <td><input type="text" class="isolacao-condutor" placeholder="10 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Material do Condutor</th>
+                          <td><input type="text" class="material-condutor" placeholder="5 %"></td>
+                      </tr>
+                  </table>
+              </div>
+
+              <!-- Parâmetros de Instalação -->
+              <div class="box-half">
+                  <h2>Parâmetros de Instalação</h2>
+                  <table>
+                      <tr>
+                          <th>Comprimento do circuito</th>
+                          <td><input type="text" class="comprimento-circuito" placeholder="240 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Maneira de instalar</th>
+                          <td><input type="text" class="maneira-instalar-param" placeholder="10 mm"></td>
+                      </tr>
+                      <tr>
+                          <th>Temperatura do Ambiente</th>
+                          <td><input type="text" class="temp-ambiente" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Fator de correção da temperatura do Ambiente*</th>
+                          <td><input type="text" class="fator-correcao" placeholder="5 %"></td>
+                      </tr>
+                      <tr>
+                          <th>Quantidade de circuitos ou cabos multipolares</th>
+                          <td><input type="text" class="quantidade-circuitos" placeholder="5 %"></td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+      </div>
+
+      <!-- Quarta Caixa: Segurança e Proteção -->
+      <div class="calc-box">
+          <h2>Segurança e Proteção</h2>
+          <table>
+              <tr>
+                  <th>Tempo de Operação da Proteção</th>
+                  <td><input type="text" class="tempo-operacao" placeholder="240 mm"></td>
+              </tr>
+              <tr>
+                  <th>Fator de Agrupamento</th>
+                  <td><input type="text" class="fator-agrupamento" placeholder="10 mm"></td>
+              </tr>
+          </table>
+      </div>
+
       </section>
     </main>
   </body>
