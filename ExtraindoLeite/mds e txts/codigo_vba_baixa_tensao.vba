@@ -38,7 +38,7 @@ Sub DescobrirMetodo()
     Set wsCorrecaoAgrup = ThisWorkbook.Sheets("Cor_Agrup")
     
     ' Encontre a última linha com dados em ambas as planilhas
-    lastRowCalculosBT = wsCalculosBT.Cells(wsCalculosBT.Rows.Count, "D").End(xlUp).Row
+    lastRowCalculosBT = wsCalculosBT.Cells(wsCalculosBT.Rows.Count, "D").End(xlUp).Row ' literalmente a ultima linha com dados
     lastRowMetodoReferencia0 = wsMetodoReferencia.Cells(wsMetodoReferencia.Rows.Count, "A").End(xlUp).Row
     lastRowMetodoReferencia1 = wsMetodoReferencia.Cells(wsMetodoReferencia.Rows.Count, "B").End(xlUp).Row
     lastRowCorrecaoTemp = 30
@@ -52,6 +52,7 @@ Sub DescobrirMetodo()
         metodoEncontrado = False
         
         ' Verificando se as células das colunas M e N estão preenchidas
+        # se as palavras nao sao vazias entao
         If palavraN <> "" And palavraM <> "" Then
             isolacao = Trim(wsCalculosBT.Cells(i, "L").Value)
             temp = Trim(wsCalculosBT.Cells(i, "Q").Value)
@@ -89,6 +90,11 @@ Sub DescobrirMetodo()
            Exit Sub
         End If
         
+
+    ////////////////////////////////
+
+
+
         'Fazendo a Correção pelo Fator de Temperatura
         
         ' Verificar valores em coluna O da planilha "Cálculos BT"
@@ -102,7 +108,7 @@ Sub DescobrirMetodo()
         If valorO = "B1" Or valorO = "B2" Or valorO = "C" Or valorO = "E" Or valorO = "F" Then
             For j = 3 To 17 ' Começa da linha 3 para ignorar cabeçalhos
                 If wsCorrecaoTemp.Cells(j, "D").Value = temp Then
-                    valorD = wsCorrecaoTemp.Cells(j, "D").Offset(0, 1).Value ' Valor à direita de D na planilha de correção
+                    valorD = wsCorrecaoTemp.Cells(j, "D").Offset(0, 1).Value ' Valor de isolacao, 1 coluna a direita
                     If isolacao = "LSHF/A" Or isolacao = "PVC" Then
                         wsCalculosBT.Cells(i, "R").Value = valorD
                     ElseIf isolacao = "EPR/HEPR" Or isolacao = "XLPE" Then
@@ -126,6 +132,8 @@ Sub DescobrirMetodo()
                 End If
             Next p
         End If
+
+
 ProximoRegistro:
         ' Limpar a formatação das células vazias
         wsCalculosBT.Cells(i, "J").Interior.ColorIndex = xlNone
@@ -176,7 +184,7 @@ Sub CorAgrup()
             'Descobrindo o fator de correção
             If metodo = "A1" Or metodo = "A2" Or metodo = "B1" Or metodo = "B2" Or metodo = "E" Or metodo = "F" And maneira_instalar = "bandeja não-perfurada" Then
                 If Not foundCell Is Nothing Then
-                    valorEncontrado = foundCell.Offset(1, 0).Value
+                    valorEncontrado = foundCell.Offset(1, 0).Value ' 1 coluna  a baixo
                     wsCalculosBT.Cells(i, "V").Value = valorEncontrado
                 End If
             End If
