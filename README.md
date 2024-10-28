@@ -5,7 +5,7 @@ Clone o repositório <br>
 no terminal digite <br>
 
 ```bash
-git checkout -b <branch-name> # para criar um branch novo com as suas mudanças
+git checkout -b branch-name # para criar um branch novo com as suas mudanças
 cd hackathom # para ir ate a pasta do repositorio
 virtualenv env
 source env/bin/activate
