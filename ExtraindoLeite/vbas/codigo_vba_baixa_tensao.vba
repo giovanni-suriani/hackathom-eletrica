@@ -236,6 +236,7 @@ ProximoRegistro:
         ' Limpando a formatação das células
         wsCalculosBT.Cells(i, "S").Interior.ColorIndex = xlNone
 End Sub
+
 Sub CurtoCircuito()
 
 'Dimensionamento pelo Método da Corrente de Curto Circuito
@@ -578,7 +579,7 @@ Sub CapacidadeCorrente()
         If metodo <> "" And isolacao <> "" And condutores <> "" And corrente > 0 Then
         num_cond = 1
 
-Calculo1:
+Calculo1: ' fazer loops esses labels
             ' Verificação do tipo de isolação e método de instalação
             If (isolacao = "LSHF/A" Or isolacao = "PVC") And (metodo = "A1" Or metodo = "A2" Or metodo = "B1" Or metodo = "B2" Or metodo = "C" Or metodo = "D") Then
                 ' Encontrando a coluna correta para busca
@@ -612,7 +613,8 @@ Calculo1:
                 If material = "Cobre" Then
                     For p = 7 To 30
                         nova_corrente = corrente / num_cond
-                        If nova_corrente > wsCapCorrente.Cells(p, coluna_aux).Value And nova_corrente <= wsCapCorrente.Cells(p + 1, coluna_aux).Value Then
+                        If nova_corrente > wsCapCorrente.Cells(p, coluna_aux).Value 
+                        And nova_corrente <= wsCapCorrente.Cells(p + 1, coluna_aux).Value Then
                             secao_encontrada = wsCapCorrente.Cells(p + 1, "A").Value
                             If secao_encontrada > secao_limite Then
                                 num_cond = num_cond + 1
@@ -648,14 +650,14 @@ Calculo1:
                     Next p
                 End If
             End If
+Calculo2:
             ' Calculo2
             num_cond1 = 1
-Calculo2:
             If (isolacao = "EPR/HEPR" Or isolacao = "XLPE") And (metodo = "A1" Or metodo = "A2" Or metodo = "B1" Or metodo = "B2" Or metodo = "C" Or metodo = "D") Then
                 ' Encontrando a coluna correta para fazer a busca
                 For j = 2 To 13
                     If metodo = wsCapCorrente.Cells(52, j).Value And condutores = wsCapCorrente.Cells(54, j).Value Then
-                        coluna_aux = j
+                        coluna_aux = j ' QUAL COLUNA OLHAR COM BASE NOS CONDUTORES e metodo referencia
                         Exit For
                     End If
                 Next j
@@ -724,9 +726,9 @@ Calculo2:
                     Next p
                 End If
             End If
+Calculo3:
             ' Calculo3
             num_cond2 = 1
-Calculo3:
             If (isolacao = "LSHF/A" Or isolacao = "PVC") And (metodo = "E" Or metodo = "F") Then
                 ' Encontrando a coluna correta para fazer a busca
                 For j = 2 To 8
@@ -800,8 +802,8 @@ Calculo3:
                     Next p
                 End If
             End If
-            ' Calculo4
             num_cond3 = 1
+            ' Calculo4
 Calculo4:
             If (isolacao = "EPR/HEPR" Or isolacao = "XLPE") And (metodo = "E" Or metodo = "F") Then
                 ' Encontrando a coluna correta para fazer a busca
@@ -810,7 +812,7 @@ Calculo4:
                         coluna_aux = j
                         Exit For
                     End If
-                Next j
+            Next j[
 
                 ' Encontrando a célula correspondente à bitola limite
                 If material = "Cobre" Then
@@ -835,14 +837,12 @@ Calculo4:
                 If material = "Cobre" Then
                     For p = 55 To 78 ' Encontrar na planilha de tabelas a bitola correspondente ao método de instalação e corrente calculada
                         nova_corrente = corrente / num_cond3
-                        If nova_corrente > wsCapCorrente2.Cells(p, coluna_aux).Value And nova_corrente <= wsCapCorrente2.Cells(p + 1, coluna_aux).Value Then
+                        If nova_corrente > wsCapCorrente2.Cells(p, coluna_aux).Value 
+                        And nova_corrente <= wsCapCorrente2.Cells(p + 1, coluna_aux).Value Then
                             secao_encontrada = wsCapCorrente2.Cells(p + 1, "A").Value
                             If secao_encontrada > secao_limite Then
                                 num_cond3 = num_cond3 + 1
-                                GoTo Calculo4
-                            ElseIf secao_encontrada < limite_min Then
-                                wsCalculosBT.Cells(i, "AA").Value = limite_min
-                                wsCalculosBT.Cells(i, "Z").Value = num_cond3
+                                GoTo Calculo4 
                             Else
                                 wsCalculosBT.Cells(i, "AA").Value = secao_encontrada
                                 wsCalculosBT.Cells(i, "Z").Value = num_cond3
@@ -885,7 +885,14 @@ Calculo4:
 End Sub
 
 
+ElseIf secao_encontrada < limite_min Then
+                                ' provavelmente erro, volta o for
+                                wsCalculosBT.Cells(i, "AA").Value = limite_min
+                                wsCalculosBT.Cells(i, "Z").Value = num_cond3
+
 Sub NeT()
+
+    ' Calcular terra e neutro
 
     Dim wsCalculosBT As Worksheet
     Set wsCalculosBT = ThisWorkbook.Sheets("Cálculos BT")
@@ -956,7 +963,7 @@ Sub NeT()
     
     
 End Sub
-Sub Calculo_Corrente()
+Sub Calculo_Corrente_Nominal()
 
     Dim wsCalculosBT As Worksheet
     Set wsCalculosBT = ThisWorkbook.Sheets("Cálculos BT")
@@ -987,11 +994,14 @@ Sub Calculo_Corrente()
 End Sub
 Sub M_E()
 
+' dimensionamento final
+
 Dim wsCalculosBT As Worksheet
 Set wsCalculosBT = ThisWorkbook.Sheets("Cálculos BT")
 Dim i As Integer
 
 LastRowCalcBT = wsCalculosBT.Cells(wsCalculosBT.Rows.Count, "D").End(xlUp).Row
+
 
 For i = 9 To LastRowCalcBT
 
